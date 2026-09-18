@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gonzalos Training Center</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f7f9f5;
+        }
+
+        header {
+            background: #1f5c35;
+            color: white;
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 18px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            min-height: 85vh;
+            background: linear-gradient(
+                rgba(20, 70, 40, 0.75),
+                rgba(20, 70, 40, 0.75)
+            ),
+            url("https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 30px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 750px;
+            margin: auto;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 25px;
+            background: #f4b942;
+            color: #222;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 70px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #1f5c35;
+            font-size: 32px;
+        }
+
+        .about {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+            font-size: 17px;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.10);
+            flex: 1 1 280px;
+            max-width: 350px;
+        }
+
+        .card h3 {
+            color: #1f5c35;
+            margin-bottom: 12px;
+        }
+
+        .program {
+            border-left: 5px solid #f4b942;
+        }
+
+        .contact {
+            background: #e8f1e7;
+        }
+
+        .contact-box {
+            max-width: 700px;
+            margin: auto;
+            text-align: center;
+        }
+
+        footer {
+            background: #173d25;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media (max-width: 768px) {
+
+            header {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav {
+                text-align: center;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            section {
+                padding: 50px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        Gonzalos Training Center
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#programs">Programs</a>
+        <a href="#mission">Mission & Vision</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+</header>
+
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+
+    <div>
+
+        <h1>Gonzalos Training Center</h1>
+
+        <p>
+            Developing Skills, Promoting Sustainable Agriculture,
+            and Empowering Future Farmers.
+        </p>
+
+        <a href="#programs" class="button">
+            View Training Programs
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <h2 class="section-title">
+        About Us
+    </h2>
+
+    <div class="about">
+
+        <p>
+            Gonzalos Training Center is an agricultural training institution
+            committed to developing practical knowledge and skills in
+            farming and agricultural production. The center promotes
+            sustainable, productive, and environmentally responsible
+            agricultural practices through hands-on learning and
+            skills development.
+        </p>
+
+        <br>
+
+        <p>
+            Through practical training and farm-based activities,
+            Gonzalos Training Center aims to help trainees develop
+            competencies that can be applied in actual agricultural
+            enterprises and livelihood opportunities.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- TRAINING PROGRAMS -->
+
+<section id="programs">
+
+    <h2 class="section-title">
+        Training Programs
+    </h2>
+
+    <div class="cards">
+
+        <div class="card program">
+
+            <h3>
+                Agricultural Crop Production
+            </h3>
+
+            <p>
+                Training in basic and practical crop production
+                practices including land preparation, planting,
+                crop care, harvesting, and post-harvest handling.
+            </p>
+
+        </div>
+
+
+        <div class="card program">
+
+            <h3>
+                Sustainable Farming Practices
+            </h3>
+
+            <p>
+                Introduction to environmentally responsible farming
+                practices, proper resource utilization, soil management,
+                and sustainable agricultural production.
+            </p>
+
+        </div>
+
+
+        <div class="card program">
+
+            <h3>
+                Farm Management
+            </h3>
+
+            <p>
+                Practical knowledge in farm planning, record keeping,
+                farm operations, resource management, and basic
+                agricultural enterprise management.
+            </p>
+
+        </div>
+
+
+        <div class="card program">
+
+            <h3>
+                Organic Agriculture
+            </h3>
+
+            <p>
+                Learning about organic production principles,
+                natural farm inputs, soil fertility management,
+                and environmentally friendly farming methods.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MISSION & VISION -->
+
+<section id="mission">
+
+    <h2 class="section-title">
+        Mission & Vision
+    </h2>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h3>Our Mission</h3>
+
+            <p>
+                To provide quality, practical, and accessible
+                agricultural training that develops competent,
+                productive, and responsible individuals capable
+                of applying sustainable farming practices.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>Our Vision</h3>
+
+            <p>
+                To become a trusted agricultural training center
+                that contributes to skilled farmers, sustainable
+                agricultural enterprises, and stronger rural
+                communities.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>Our Objectives</h3>
+
+            <p>
+                • Develop practical agricultural skills.<br>
+                • Promote sustainable farming practices.<br>
+                • Prepare trainees for agricultural livelihood
+                and employment opportunities.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FARM PRACTICES -->
+
+<section>
+
+    <h2 class="section-title">
+        Farm Practices
+    </h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Crop Production</h3>
+            <p>
+                Application of proper crop production techniques
+                from land preparation to harvesting.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Soil Management</h3>
+            <p>
+                Proper soil preparation, fertility management,
+                and conservation practices.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Organic Inputs</h3>
+            <p>
+                Proper utilization of organic materials and
+                sustainable farm inputs.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+    <h2 class="section-title">
+        Contact Us
+    </h2>
+
+    <div class="contact-box">
+
+        <p>
+            Interested in our agricultural training programs?
+            We would be happy to assist you.
+        </p>
+
+        <br>
+
+        <p>
+            <strong>Gonzalos Training Center</strong>
+        </p>
+
+        <p>
+            📍 Location: Indang, Cavite, Philippines
+        </p>
+
+        <p>
+            📞 Contact Number: Add your contact number here
+        </p>
+
+        <p>
+            📧 Email: Add your email address here
+        </p>
+
+        <br>
+
+        <a href="mailto:your@email.com" class="button">
+            Send Us an Email
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        © 2026 Gonzalos Training Center
+    </p>
+
+    <p>
+        Agricultural Skills Training • Sustainable Farming • Skills Development
+    </p>
+
+</footer>
+
+</body>
+</html>
