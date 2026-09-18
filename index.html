@@ -1,1006 +1,1148 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Gonzalo's Training Center | Agricultural Skills Training</title>
-
-    <meta name="description"
-    content="Gonzalos Training Center provides practical agricultural skills training and promotes sustainable farming practices.">
-
-    <style>
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            color: #26352b;
-            background: #ffffff;
-            line-height: 1.6;
-        }
-
-        /* ================= HEADER ================= */
-
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: rgba(255,255,255,0.97);
-            border-bottom: 1px solid #e5e5e5;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-        }
-
-        .navbar {
-            max-width: 1200px;
-            margin: auto;
-            padding: 15px 25px;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .brand-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: #1f6b3b;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            color: white;
-            font-size: 25px;
-        }
-
-        .brand-text h2 {
-            color: #174d2b;
-            font-size: 20px;
-        }
-
-        .brand-text span {
-            font-size: 11px;
-            color: #777;
-            letter-spacing: 1px;
-        }
-
-        nav {
-            display: flex;
-            gap: 25px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #34463a;
-            font-weight: 600;
-            font-size: 14px;
-        }
-
-        nav a:hover {
-            color: #1f6b3b;
-        }
-
-        .nav-button {
-            background: #1f6b3b;
-            color: white !important;
-            padding: 10px 18px;
-            border-radius: 6px;
-        }
-
-        /* ================= HERO ================= */
-
-        .hero {
-            min-height: 650px;
-
-            background:
-                linear-gradient(
-                    rgba(12, 55, 28, 0.72),
-                    rgba(12, 55, 28, 0.72)
-                ),
-                url("https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1800&q=85");
-
-            background-size: cover;
-            background-position: center;
-
-            display: flex;
-            align-items: center;
-        }
-
-        .hero-content {
-            max-width: 1200px;
-            width: 100%;
-            margin: auto;
-            padding: 70px 25px;
-            color: white;
-        }
-
-        .hero-label {
-            display: inline-block;
-            background: rgba(255,255,255,0.15);
-            border: 1px solid rgba(255,255,255,0.4);
-            padding: 8px 16px;
-            border-radius: 30px;
-            font-size: 13px;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 {
-            font-size: 58px;
-            line-height: 1.1;
-            max-width: 800px;
-            margin-bottom: 22px;
-        }
-
-        .hero h1 span {
-            color: #f3c85b;
-        }
-
-        .hero p {
-            max-width: 700px;
-            font-size: 19px;
-            color: #f3f3f3;
-            margin-bottom: 30px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-block;
-            text-decoration: none;
-            padding: 14px 25px;
-            border-radius: 6px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .btn-primary {
-            background: #f3c85b;
-            color: #26352b;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-        }
-
-        .btn-outline {
-            border: 1px solid white;
-            color: white;
-        }
-
-        .btn-outline:hover {
-            background: white;
-            color: #174d2b;
-        }
-
-        /* ================= INTRO ================= */
-
-        .intro {
-            padding: 75px 25px;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        .intro-grid {
-            display: grid;
-            grid-template-columns: 1.1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .intro-image {
-            height: 420px;
-            border-radius: 12px;
-
-            background:
-                url("https://images.unsplash.com/photo-1523742815377-8f8f6b1f5b19?auto=format&fit=crop&w=1000&q=80");
-
-            background-size: cover;
-            background-position: center;
-
-            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
-        }
-
-        .section-label {
-            color: #1f6b3b;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 13px;
-            margin-bottom: 12px;
-        }
-
-        .intro h2 {
-            font-size: 38px;
-            color: #174d2b;
-            line-height: 1.2;
-            margin-bottom: 20px;
-        }
-
-        .intro p {
-            color: #5c665f;
-            margin-bottom: 15px;
-        }
-
-        /* ================= HIGHLIGHTS ================= */
-
-        .highlights {
-            background: #f3f7f2;
-            padding: 70px 25px;
-        }
-
-        .section-heading {
-            text-align: center;
-            max-width: 700px;
-            margin: auto auto 45px;
-        }
-
-        .section-heading h2 {
-            font-size: 36px;
-            color: #174d2b;
-            margin-bottom: 12px;
-        }
-
-        .section-heading p {
-            color: #69736d;
-        }
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .card {
-            background: white;
-            padding: 32px;
-            border-radius: 12px;
-            border: 1px solid #e5ebe5;
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(0,0,0,0.08);
-        }
-
-        .card-icon {
-            width: 55px;
-            height: 55px;
-            border-radius: 10px;
-            background: #e4f0e5;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            font-size: 27px;
-            margin-bottom: 20px;
-        }
-
-        .card h3 {
-            color: #174d2b;
-            margin-bottom: 10px;
-            font-size: 20px;
-        }
-
-        .card p {
-            color: #69736d;
-            font-size: 15px;
-        }
-
-        /* ================= TRAINING ================= */
-
-        .training {
-            padding: 80px 25px;
-        }
-
-        .training-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-
-        .training-card {
-            border-radius: 10px;
-            overflow: hidden;
-            background: #fff;
-            border: 1px solid #e5e5e5;
-        }
-
-        .training-photo {
-            height: 190px;
-
-            background-size: cover;
-            background-position: center;
-        }
-
-        .photo1 {
-            background-image:
-            url("https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=800&q=80");
-        }
-
-        .photo2 {
-            background-image:
-            url("https://images.unsplash.com/photo-1499529112087-3cb3b73cec95?auto=format&fit=crop&w=800&q=80");
-        }
-
-        .photo3 {
-            background-image:
-            url("https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=800&q=80");
-        }
-
-        .photo4 {
-            background-image:
-            url("https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=800&q=80");
-        }
-
-        .training-info {
-            padding: 22px;
-        }
-
-        .training-info h3 {
-            color: #174d2b;
-            margin-bottom: 8px;
-        }
-
-        .training-info p {
-            color: #69736d;
-            font-size: 14px;
-        }
-
-        /* ================= MISSION ================= */
-
-        .mission {
-            padding: 80px 25px;
-            background: #174d2b;
-            color: white;
-        }
-
-        .mission-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-        }
-
-        .mission-box {
-            padding: 35px;
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 12px;
-            background: rgba(255,255,255,0.05);
-        }
-
-        .mission-box h3 {
-            color: #f3c85b;
-            font-size: 24px;
-            margin-bottom: 15px;
-        }
-
-        .mission-box p {
-            color: #e4ebe5;
-        }
-
-        /* ================= CTA ================= */
-
-        .cta {
-            padding: 80px 25px;
-            text-align: center;
-            background: #f3c85b;
-        }
-
-        .cta h2 {
-            font-size: 38px;
-            color: #173d25;
-            margin-bottom: 12px;
-        }
-
-        .cta p {
-            max-width: 650px;
-            margin: auto;
-            color: #4e584f;
-        }
-
-        .cta .btn {
-            margin-top: 25px;
-            background: #174d2b;
-            color: white;
-        }
-
-        /* ================= FOOTER ================= */
-
-        footer {
-            background: #102d1b;
-            color: white;
-            padding: 45px 25px 20px;
-        }
-
-        .footer-grid {
-            max-width: 1200px;
-            margin: auto;
-
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 40px;
-        }
-
-        footer h3 {
-            margin-bottom: 12px;
-        }
-
-        footer p {
-            color: #c6d0c8;
-            font-size: 14px;
-        }
-
-        footer a {
-            display: block;
-            color: #c6d0c8;
-            text-decoration: none;
-            margin-bottom: 7px;
-            font-size: 14px;
-        }
-
-        footer a:hover {
-            color: white;
-        }
-
-        .copyright {
-            max-width: 1200px;
-            margin: 35px auto 0;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.15);
-            text-align: center;
-            font-size: 13px;
-            color: #aab6ad;
-        }
-
-        /* ================= MOBILE ================= */
-
-        @media (max-width: 900px) {
-
-            nav {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 43px;
-            }
-
-            .intro-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .cards {
-                grid-template-columns: 1fr;
-            }
-
-            .training-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .mission-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 600px) {
-
-            .hero {
-                min-height: 600px;
-            }
-
-            .hero h1 {
-                font-size: 36px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            .training-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .intro h2,
-            .section-heading h2,
-            .cta h2 {
-                font-size: 30px;
-            }
-        }
-
-    </style>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gonzalo's Training Center</title>
+
+<meta name="description"
+content="Gonzalo's Training Center - Agricultural Skills Training and Sustainable Farming">
+
+<style>
+
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #173d25;
+    background: #ffffff;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+.navbar {
+    min-height: 78px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 210px;
+    height: auto;
+    display: block;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+nav a {
+    color: #173d25;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #329447;
+}
+
+.nav-button {
+    background: #075c2c;
+    color: white !important;
+    padding: 12px 20px;
+    border-radius: 25px;
+}
+
+.nav-button:hover {
+    background: #2d8c42;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(4,48,24,0.92),
+            rgba(4,48,24,0.65),
+            rgba(4,48,24,0.15)
+        ),
+        url("https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=2000&q=90");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    color: white;
+}
+
+.hero-small {
+    font-size: 14px;
+    letter-spacing: 4px;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+.hero-small span {
+    display: inline-block;
+    width: 55px;
+    height: 2px;
+    background: #72c93d;
+    vertical-align: middle;
+    margin-left: 12px;
+}
+
+.hero h1 {
+    font-size: 64px;
+    line-height: 1.08;
+    max-width: 760px;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #86d957;
+}
+
+.hero p {
+    max-width: 650px;
+    font-size: 18px;
+    color: #f0f5f1;
+    margin-bottom: 32px;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 14px 26px;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-green {
+    background: #4caf50;
+    color: white;
+}
+
+.btn-green:hover {
+    background: #368a3b;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    border: 1px solid white;
+    color: white;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: #174d2b;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+    padding: 80px 0;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 55px;
+    align-items: center;
+}
+
+.about-image {
+    height: 390px;
+    border-radius: 12px;
+
+    background:
+        url("https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=1000&q=90");
+
+    background-size: cover;
+    background-position: center;
+
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+.section-label {
+    color: #319448;
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.section-label:after {
+    content: "";
+    display: inline-block;
+    width: 50px;
+    height: 2px;
+    background: #319448;
+    margin-left: 12px;
+    vertical-align: middle;
+}
+
+.about h2 {
+    font-size: 38px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #174d2b;
+}
+
+.about p {
+    color: #59655d;
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   VALUES
+========================= */
+
+.values {
+    background: #f1f7f1;
+    padding: 70px 0;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.value-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    display: flex;
+    gap: 18px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.icon {
+    min-width: 55px;
+    height: 55px;
+    background: #e3f2e4;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 25px;
+}
+
+.value-card h3 {
+    margin-bottom: 6px;
+    color: #17602d;
+}
+
+.value-card p {
+    color: #68736c;
+    font-size: 14px;
+}
+
+
+/* =========================
+   TRAINING PROGRAMS
+========================= */
+
+.programs {
+    padding: 80px 0;
+}
+
+.heading {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 45px;
+}
+
+.heading h2 {
+    font-size: 38px;
+    color: #174d2b;
+    margin-bottom: 10px;
+}
+
+.heading p {
+    color: #68736c;
+}
+
+.program-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.program-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #e2e8e2;
+    transition: 0.3s;
+}
+
+.program-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.09);
+}
+
+.program-image {
+    height: 175px;
+    background-size: cover;
+    background-position: center;
+}
+
+.crop {
+    background-image:
+    url("https://images.unsplash.com/photo-1598514982901-ae627f5a6d6b?auto=format&fit=crop&w=800&q=85");
+}
+
+.sustainable {
+    background-image:
+    url("https://images.unsplash.com/photo-1499529112087-3cb3b73cec95?auto=format&fit=crop&w=800&q=85");
+}
+
+.organic {
+    background-image:
+    url("https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=800&q=85");
+}
+
+.management {
+    background-image:
+    url("https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=800&q=85");
+}
+
+.program-content {
+    padding: 20px;
+}
+
+.program-content h3 {
+    font-size: 18px;
+    color: #174d2b;
+    margin-bottom: 8px;
+}
+
+.program-content p {
+    font-size: 14px;
+    color: #68736c;
+}
+
+
+/* =========================
+   MISSION
+========================= */
+
+.mission {
+    padding: 80px 0;
+    background: #075c2c;
+    color: white;
+}
+
+.mission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.mission-card {
+    padding: 35px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 12px;
+    background: rgba(255,255,255,0.06);
+}
+
+.mission-card h3 {
+    color: #8bd95b;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.mission-card p {
+    color: #e2eee5;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta {
+    padding: 80px 20px;
+    text-align: center;
+    background: #dff0d9;
+}
+
+.cta h2 {
+    font-size: 38px;
+    color: #174d2b;
+    margin-bottom: 12px;
+}
+
+.cta p {
+    max-width: 650px;
+    margin: auto;
+    color: #59655d;
+}
+
+.cta .btn {
+    margin-top: 25px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #0c351d;
+    color: white;
+    padding: 50px 0 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 45px;
+}
+
+footer h3 {
+    margin-bottom: 15px;
+}
+
+footer p {
+    color: #c7d4ca;
+    font-size: 14px;
+}
+
+footer a {
+    display: block;
+    color: #c7d4ca;
+    text-decoration: none;
+    margin-bottom: 7px;
+    font-size: 14px;
+}
+
+footer a:hover {
+    color: white;
+}
+
+.copyright {
+    border-top: 1px solid rgba(255,255,255,0.15);
+    margin-top: 35px;
+    padding-top: 20px;
+    text-align: center;
+    color: #aebbb1;
+    font-size: 13px;
+}
+
+
+/* =========================
+   MOBILE / TABLET
+========================= */
+
+@media (max-width: 950px) {
+
+    nav {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .program-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .mission-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .logo img {
+        width: 170px;
+    }
+
+    .hero {
+        min-height: 600px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .about h2,
+    .heading h2,
+    .cta h2 {
+        font-size: 30px;
+    }
+
+    .program-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+}
+
+</style>
+
 </head>
+
 
 <body>
 
-<!-- ================= HEADER ================= -->
+
+<!-- =========================
+     NAVIGATION
+========================= -->
 
 <header>
 
-    <div class="navbar">
+<div class="container navbar">
 
-        <div class="brand">
+    <a href="#home" class="logo">
 
-            <div class="brand-icon">
-                🌱
-            </div>
+        <img src="logo.png"
+        alt="Gonzalo's Training Center Logo">
 
-            <div class="brand-text">
-                <h2>Gonzalo's Training Center</h2>
-                <span>AGRICULTURAL SKILLS DEVELOPMENT</span>
-            </div>
+    </a>
 
-        </div>
 
-        <nav>
+    <nav>
 
-            <a href="#home">Home</a>
+        <a href="#home">Home</a>
 
-            <a href="#about">About</a>
+        <a href="#about">About Us</a>
 
-            <a href="#training">Programs</a>
+        <a href="#programs">Training Programs</a>
 
-            <a href="#mission">Mission</a>
+        <a href="#mission">Mission & Vision</a>
 
-            <a href="#contact" class="nav-button">
-                Contact Us
-            </a>
+        <a href="#contact" class="nav-button">
+            Inquire Now
+        </a>
 
-        </nav>
+    </nav>
 
-    </div>
+</div>
 
 </header>
 
 
-<!-- ================= HERO ================= -->
+
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero" id="home">
 
-    <div class="hero-content">
+<div class="hero-content">
 
-        <div class="hero-label">
-            🌾 AGRICULTURAL TRAINING & SKILLS DEVELOPMENT
-        </div>
+    <div class="hero-small">
 
-        <h1>
-            Growing Skills.<br>
-            <span>Growing Opportunities.</span>
-        </h1>
+        AGRICULTURAL SKILLS TRAINING CENTER
 
-        <p>
-            Gonzalos' Training Center provides practical agricultural
-            training designed to develop skills, promote sustainable
-            farming practices, and prepare individuals for opportunities
-            in agriculture.
-        </p>
-
-        <div class="hero-buttons">
-
-            <a href="#training" class="btn btn-primary">
-                Explore Our Programs
-            </a>
-
-            <a href="#about" class="btn btn-outline">
-                Learn More
-            </a>
-
-        </div>
+        <span></span>
 
     </div>
 
-</section>
 
+    <h1>
 
-<!-- ================= ABOUT ================= -->
+        Growing Skills.<br>
 
-<section class="intro" id="about">
+        <span>Building Brighter Futures.</span>
 
-    <div class="container">
+    </h1>
 
-        <div class="intro-grid">
 
-            <div class="intro-image"></div>
+    <p>
 
-            <div>
+        Gonzalo's Training Center provides practical agricultural
+        training and promotes sustainable farming practices to
+        develop skilled individuals and stronger rural communities.
 
-                <div class="section-label">
-                    About Gonzalos Training Center
-                </div>
+    </p>
 
-                <h2>
-                    Practical Training for a Sustainable Agricultural Future
-                </h2>
 
-                <p>
-                    Gonzalos Training Center is committed to providing
-                    practical and accessible agricultural skills training
-                    for individuals who want to develop their knowledge
-                    and competencies in farming and agricultural production.
-                </p>
+    <div class="buttons">
 
-                <p>
-                    Through hands-on learning and farm-based activities,
-                    trainees can gain practical experience that can be
-                    applied to agricultural livelihood, employment,
-                    and enterprise opportunities.
-                </p>
+        <a href="#programs"
+        class="btn btn-green">
 
-                <a href="#mission" class="btn btn-primary">
-                    Discover Our Purpose
-                </a>
+            🌱 Explore Our Programs
 
-            </div>
+        </a>
 
-        </div>
 
-    </div>
+        <a href="#about"
+        class="btn btn-outline">
 
-</section>
+            Learn More →
 
-
-<!-- ================= HIGHLIGHTS ================= -->
-
-<section class="highlights">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <div class="section-label">
-                What We Promote
-            </div>
-
-            <h2>
-                Skills That Grow With You
-            </h2>
-
-            <p>
-                We focus on practical knowledge and responsible
-                agricultural practices that can be applied in real
-                farm situations.
-            </p>
-
-        </div>
-
-
-        <div class="cards">
-
-            <div class="card">
-
-                <div class="card-icon">👨‍🌾</div>
-
-                <h3>
-                    Practical Skills
-                </h3>
-
-                <p>
-                    Develop hands-on skills in crop production,
-                    farm operations, and agricultural practices.
-                </p>
-
-            </div>
-
-
-            <div class="card">
-
-                <div class="card-icon">🌱</div>
-
-                <h3>
-                    Sustainable Agriculture
-                </h3>
-
-                <p>
-                    Promote responsible farming methods that
-                    support productivity and environmental care.
-                </p>
-
-            </div>
-
-
-            <div class="card">
-
-                <div class="card-icon">🎓</div>
-
-                <h3>
-                    Skills Development
-                </h3>
-
-                <p>
-                    Strengthen agricultural knowledge and
-                    competencies for livelihood and employment.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= TRAINING PROGRAMS ================= -->
-
-<section class="training" id="training">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <div class="section-label">
-                Training Programs
-            </div>
-
-            <h2>
-                Learn. Practice. Grow.
-            </h2>
-
-            <p>
-                Our training areas are designed to provide practical
-                knowledge relevant to agricultural production and
-                farm management.
-            </p>
-
-        </div>
-
-
-        <div class="training-grid">
-
-            <div class="training-card">
-
-                <div class="training-photo photo1"></div>
-
-                <div class="training-info">
-
-                    <h3>
-                        Agricultural Crop Production
-                    </h3>
-
-                    <p>
-                        Learn basic crop production practices from
-                        land preparation and planting to crop care
-                        and harvesting.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="training-card">
-
-                <div class="training-photo photo2"></div>
-
-                <div class="training-info">
-
-                    <h3>
-                        Sustainable Farming
-                    </h3>
-
-                    <p>
-                        Explore responsible agricultural practices,
-                        resource management, and sustainable farm
-                        production.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="training-card">
-
-                <div class="training-photo photo3"></div>
-
-                <div class="training-info">
-
-                    <h3>
-                        Organic Agriculture
-                    </h3>
-
-                    <p>
-                        Gain knowledge about organic farming principles,
-                        natural inputs, and soil fertility management.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="training-card">
-
-                <div class="training-photo photo4"></div>
-
-                <div class="training-info">
-
-                    <h3>
-                        Farm Management
-                    </h3>
-
-                    <p>
-                        Learn basic farm planning, record keeping,
-                        resource management, and farm operations.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= MISSION ================= -->
-
-<section class="mission" id="mission">
-
-    <div class="container">
-
-        <div class="mission-grid">
-
-            <div class="mission-box">
-
-                <h3>
-                    Our Mission
-                </h3>
-
-                <p>
-                    To provide quality, practical, and accessible
-                    agricultural training that develops competent,
-                    productive, and responsible individuals capable
-                    of applying sustainable farming practices.
-                </p>
-
-            </div>
-
-
-            <div class="mission-box">
-
-                <h3>
-                    Our Vision
-                </h3>
-
-                <p>
-                    To become a trusted agricultural training center
-                    that contributes to skilled farmers, sustainable
-                    agricultural enterprises, and stronger rural
-                    communities.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= CTA ================= -->
-
-<section class="cta" id="contact">
-
-    <div class="container">
-
-        <h2>
-            Ready to Develop Your Agricultural Skills?
-        </h2>
-
-        <p>
-            Get in touch with Gonzalos Training Center to learn more
-            about our training programs, schedules, and enrollment
-            opportunities.
-        </p>
-
-        <a href="mailto:gonzalosfarm@gmail.com" class="btn">
-            📩 Send an Inquiry
         </a>
 
     </div>
 
+</div>
+
 </section>
 
 
-<!-- ================= FOOTER ================= -->
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section class="about" id="about">
+
+<div class="container">
+
+<div class="about-grid">
+
+
+    <div class="about-image"></div>
+
+
+    <div>
+
+        <div class="section-label">
+            About Us
+        </div>
+
+
+        <h2>
+
+            Practical Training for a
+            Sustainable Agricultural Future
+
+        </h2>
+
+
+        <p>
+
+            Gonzalo's Training Center is committed to providing
+            quality and practical agricultural training that equips
+            individuals with knowledge and skills needed for
+            productive and sustainable farming.
+
+        </p>
+
+
+        <p>
+
+            Through hands-on learning and farm-based activities,
+            trainees can develop practical competencies that can
+            be applied to agricultural livelihood, employment,
+            and enterprise opportunities.
+
+        </p>
+
+
+        <a href="#mission"
+        class="btn btn-green">
+
+            Discover Our Purpose →
+
+        </a>
+
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     VALUES
+========================= -->
+
+<section class="values">
+
+<div class="container">
+
+<div class="values-grid">
+
+
+    <div class="value-card">
+
+        <div class="icon">
+            🌿
+        </div>
+
+        <div>
+
+            <h3>
+                Practical Skills
+            </h3>
+
+            <p>
+
+                Gain hands-on knowledge in crop production,
+                farm operations, and agricultural practices.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="value-card">
+
+        <div class="icon">
+            🌱
+        </div>
+
+        <div>
+
+            <h3>
+                Sustainable Agriculture
+            </h3>
+
+            <p>
+
+                Learn responsible farming methods that promote
+                environmental care and long-term productivity.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="value-card">
+
+        <div class="icon">
+            👥
+        </div>
+
+        <div>
+
+            <h3>
+                Community Empowerment
+            </h3>
+
+            <p>
+
+                Develop skills that can support livelihood,
+                employment, enterprise, and community growth.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     TRAINING PROGRAMS
+========================= -->
+
+<section class="programs" id="programs">
+
+<div class="container">
+
+
+<div class="heading">
+
+    <div class="section-label">
+        Training Programs
+    </div>
+
+    <h2>
+        Learn. Practice. Grow.
+    </h2>
+
+    <p>
+
+        Our training programs focus on practical agricultural
+        knowledge, sustainable production, and farm management.
+
+    </p>
+
+</div>
+
+
+
+<div class="program-grid">
+
+
+    <div class="program-card">
+
+        <div class="program-image crop"></div>
+
+        <div class="program-content">
+
+            <h3>
+                Crop Production
+            </h3>
+
+            <p>
+
+                Learn from land preparation and planting
+                to crop care, harvesting, and post-harvest practices.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="program-card">
+
+        <div class="program-image sustainable"></div>
+
+        <div class="program-content">
+
+            <h3>
+                Sustainable Farming
+            </h3>
+
+            <p>
+
+                Explore sustainable practices, resource
+                management, and soil conservation.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="program-card">
+
+        <div class="program-image organic"></div>
+
+        <div class="program-content">
+
+            <h3>
+                Organic Agriculture
+            </h3>
+
+            <p>
+
+                Gain knowledge about organic farming principles,
+                natural inputs, and soil fertility management.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="program-card">
+
+        <div class="program-image management"></div>
+
+        <div class="program-content">
+
+            <h3>
+                Farm Management
+            </h3>
+
+            <p>
+
+                Learn farm planning, record keeping,
+                resource management, and farm operations.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     MISSION & VISION
+========================= -->
+
+<section class="mission" id="mission">
+
+<div class="container">
+
+<div class="mission-grid">
+
+
+    <div class="mission-card">
+
+        <h3>
+            Our Mission
+        </h3>
+
+        <p>
+
+            To provide quality, practical, and accessible
+            agricultural training that develops competent,
+            productive, and responsible individuals capable
+            of applying sustainable farming practices.
+
+        </p>
+
+    </div>
+
+
+
+    <div class="mission-card">
+
+        <h3>
+            Our Vision
+        </h3>
+
+        <p>
+
+            To become a trusted agricultural training center
+            that contributes to skilled farmers, sustainable
+            agricultural enterprises, and stronger rural
+            communities.
+
+        </p>
+
+    </div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     CALL TO ACTION
+========================= -->
+
+<section class="cta" id="contact">
+
+<div class="container">
+
+    <h2>
+        Ready to Develop Your Agricultural Skills?
+    </h2>
+
+    <p>
+
+        Get in touch with Gonzalo's Training Center to learn
+        more about our training programs, schedules,
+        and enrollment opportunities.
+
+    </p>
+
+
+    <a href="mailto:gonzalosfarm@gmail.com"
+    class="btn btn-green">
+
+        📩 send an inqury
+
+    </a>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
-    <div class="footer-grid">
+<div class="container">
 
-        <div>
-
-            <h3>
-                Gonzalo's Training Center
-            </h3>
-
-            <p>
-                Agricultural Skills Training and Development
-                focused on practical learning, sustainable
-                farming, and agricultural opportunities.
-            </p>
-
-        </div>
+<div class="footer-grid">
 
 
-        <div>
+    <div>
 
-            <h3>
-                Quick Links
-            </h3>
+        <h3>
+            Gonzalo's Training Center
+        </h3>
 
-            <a href="#home">Home</a>
+        <p>
 
-            <a href="#about">About Us</a>
+            Agricultural Skills Training and Development
+            focused on practical learning, sustainable
+            farming, and agricultural opportunities.
 
-            <a href="#training">Training Programs</a>
-
-            <a href="#mission">Mission & Vision</a>
-
-        </div>
-
-
-        <div>
-
-            <h3>
-                Contact
-            </h3>
-
-            <p>
-                📍 69 Barangay Limbon Indang, Cavite, Philippines
-            </p>
-
-            <p>
-                📞 09085971618
-            </p>
-
-            <p>
-                📧 gonzalosfarm@gmail.com
-            </p>
-
-        </div>
+        </p>
 
     </div>
 
 
-    <div class="copyright">
+    <div>
 
-        © 2026 Gonzalo's Training Center.
-        All Rights Reserved.
+        <h3>
+            Quick Links
+        </h3>
+
+        <a href="#home">Home</a>
+
+        <a href="#about">About Us</a>
+
+        <a href="#programs">Training Programs</a>
+
+        <a href="#mission">Mission & Vision</a>
 
     </div>
+
+
+    <div>
+
+        <h3>
+            Contact
+        </h3>
+
+        <p>
+            📍 69 Barangay Limbon Indang, Cavite, Philippines
+        </p>
+
+        <p>
+            📞 09085971618
+        </p>
+
+        <p>
+            📧 gonzalosfarm@gmail.com
+        </p>
+
+    </div>
+
+
+</div>
+
+
+<div class="copyright">
+
+    © 2026 Gonzalo's Training Center.
+    All Rights Reserved.
+
+</div>
+
+</div>
 
 </footer>
 
+
 </body>
+
 </html>
